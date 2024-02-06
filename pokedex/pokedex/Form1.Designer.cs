@@ -30,7 +30,6 @@
         {
             this.nametextBox = new System.Windows.Forms.TextBox();
             this.typetextBox = new System.Windows.Forms.TextBox();
-            this.attacknumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.hpnumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.xpnumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.generationnumericUpDown = new System.Windows.Forms.NumericUpDown();
@@ -45,8 +44,13 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.savebutton = new System.Windows.Forms.Button();
-            this.debugBox = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.attacknumericUpDown)).BeginInit();
+            this.attackcomboBox = new System.Windows.Forms.ComboBox();
+            this.firstbutton = new System.Windows.Forms.Button();
+            this.previousbutton = new System.Windows.Forms.Button();
+            this.nextbutton = new System.Windows.Forms.Button();
+            this.lastbutton = new System.Windows.Forms.Button();
+            this.currentlabel = new System.Windows.Forms.Label();
+            this.newbutton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.hpnumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xpnumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.generationnumericUpDown)).BeginInit();
@@ -66,13 +70,6 @@
             this.typetextBox.Name = "typetextBox";
             this.typetextBox.Size = new System.Drawing.Size(100, 22);
             this.typetextBox.TabIndex = 1;
-            // 
-            // attacknumericUpDown
-            // 
-            this.attacknumericUpDown.Location = new System.Drawing.Point(236, 150);
-            this.attacknumericUpDown.Name = "attacknumericUpDown";
-            this.attacknumericUpDown.Size = new System.Drawing.Size(120, 22);
-            this.attacknumericUpDown.TabIndex = 2;
             // 
             // hpnumericUpDown
             // 
@@ -188,7 +185,7 @@
             // 
             // savebutton
             // 
-            this.savebutton.Location = new System.Drawing.Point(372, 388);
+            this.savebutton.Location = new System.Drawing.Point(197, 393);
             this.savebutton.Name = "savebutton";
             this.savebutton.Size = new System.Drawing.Size(75, 23);
             this.savebutton.TabIndex = 18;
@@ -196,20 +193,89 @@
             this.savebutton.UseVisualStyleBackColor = true;
             this.savebutton.Click += new System.EventHandler(this.savebutton_Click);
             // 
-            // debugBox
+            // attackcomboBox
             // 
-            this.debugBox.Location = new System.Drawing.Point(447, 38);
-            this.debugBox.Multiline = true;
-            this.debugBox.Name = "debugBox";
-            this.debugBox.Size = new System.Drawing.Size(269, 319);
-            this.debugBox.TabIndex = 19;
+            this.attackcomboBox.FormattingEnabled = true;
+            this.attackcomboBox.Items.AddRange(new object[] {
+            "special_attack",
+            "special_defense"});
+            this.attackcomboBox.Location = new System.Drawing.Point(236, 149);
+            this.attackcomboBox.Name = "attackcomboBox";
+            this.attackcomboBox.Size = new System.Drawing.Size(160, 24);
+            this.attackcomboBox.TabIndex = 22;
+            // 
+            // firstbutton
+            // 
+            this.firstbutton.Location = new System.Drawing.Point(116, 495);
+            this.firstbutton.Name = "firstbutton";
+            this.firstbutton.Size = new System.Drawing.Size(75, 32);
+            this.firstbutton.TabIndex = 23;
+            this.firstbutton.Text = "<<";
+            this.firstbutton.UseVisualStyleBackColor = true;
+            this.firstbutton.Click += new System.EventHandler(this.firstbutton_Click);
+            // 
+            // previousbutton
+            // 
+            this.previousbutton.Location = new System.Drawing.Point(197, 495);
+            this.previousbutton.Name = "previousbutton";
+            this.previousbutton.Size = new System.Drawing.Size(75, 32);
+            this.previousbutton.TabIndex = 24;
+            this.previousbutton.Text = "<";
+            this.previousbutton.UseVisualStyleBackColor = true;
+            this.previousbutton.Click += new System.EventHandler(this.previousbutton_Click);
+            // 
+            // nextbutton
+            // 
+            this.nextbutton.Location = new System.Drawing.Point(278, 495);
+            this.nextbutton.Name = "nextbutton";
+            this.nextbutton.Size = new System.Drawing.Size(75, 32);
+            this.nextbutton.TabIndex = 25;
+            this.nextbutton.Text = ">";
+            this.nextbutton.UseVisualStyleBackColor = true;
+            this.nextbutton.Click += new System.EventHandler(this.nextbutton_Click);
+            // 
+            // lastbutton
+            // 
+            this.lastbutton.Location = new System.Drawing.Point(359, 495);
+            this.lastbutton.Name = "lastbutton";
+            this.lastbutton.Size = new System.Drawing.Size(75, 32);
+            this.lastbutton.TabIndex = 26;
+            this.lastbutton.Text = ">>";
+            this.lastbutton.UseVisualStyleBackColor = true;
+            this.lastbutton.Click += new System.EventHandler(this.lastbutton_Click);
+            // 
+            // currentlabel
+            // 
+            this.currentlabel.AutoSize = true;
+            this.currentlabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.currentlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.currentlabel.Location = new System.Drawing.Point(251, 435);
+            this.currentlabel.Name = "currentlabel";
+            this.currentlabel.Size = new System.Drawing.Size(2, 48);
+            this.currentlabel.TabIndex = 27;
+            // 
+            // newbutton
+            // 
+            this.newbutton.Location = new System.Drawing.Point(294, 393);
+            this.newbutton.Name = "newbutton";
+            this.newbutton.Size = new System.Drawing.Size(75, 23);
+            this.newbutton.TabIndex = 28;
+            this.newbutton.Text = "new";
+            this.newbutton.UseVisualStyleBackColor = true;
+            this.newbutton.Click += new System.EventHandler(this.newbutton_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.debugBox);
+            this.ClientSize = new System.Drawing.Size(637, 568);
+            this.Controls.Add(this.newbutton);
+            this.Controls.Add(this.currentlabel);
+            this.Controls.Add(this.lastbutton);
+            this.Controls.Add(this.nextbutton);
+            this.Controls.Add(this.previousbutton);
+            this.Controls.Add(this.firstbutton);
+            this.Controls.Add(this.attackcomboBox);
             this.Controls.Add(this.savebutton);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label6);
@@ -224,13 +290,12 @@
             this.Controls.Add(this.generationnumericUpDown);
             this.Controls.Add(this.xpnumericUpDown);
             this.Controls.Add(this.hpnumericUpDown);
-            this.Controls.Add(this.attacknumericUpDown);
             this.Controls.Add(this.typetextBox);
             this.Controls.Add(this.nametextBox);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.attacknumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hpnumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xpnumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.generationnumericUpDown)).EndInit();
@@ -244,7 +309,6 @@
 
         private System.Windows.Forms.TextBox nametextBox;
         private System.Windows.Forms.TextBox typetextBox;
-        private System.Windows.Forms.NumericUpDown attacknumericUpDown;
         private System.Windows.Forms.NumericUpDown hpnumericUpDown;
         private System.Windows.Forms.NumericUpDown xpnumericUpDown;
         private System.Windows.Forms.NumericUpDown generationnumericUpDown;
@@ -259,7 +323,13 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button savebutton;
-        private System.Windows.Forms.TextBox debugBox;
+        private System.Windows.Forms.ComboBox attackcomboBox;
+        private System.Windows.Forms.Button firstbutton;
+        private System.Windows.Forms.Button previousbutton;
+        private System.Windows.Forms.Button nextbutton;
+        private System.Windows.Forms.Button lastbutton;
+        private System.Windows.Forms.Label currentlabel;
+        private System.Windows.Forms.Button newbutton;
     }
 }
 
